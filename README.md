@@ -6,7 +6,15 @@ Tiny daemon for installing DSU packages on unprivileged apps
 2. Launch start.bat and then follow what it says
 
 # How to replicate releases
+## Normal
 1. Build release variant
 2. Get classes.dex from the APK
 3. Copy it over to app/dist
 4. Compress it into a ZIP file
+
+## Bundled
+1. Build release variant
+2. Get classes.dex from the APK
+3. Copy it over to app/dist
+4. Copy platform-tools to app/dist
+5. Compress it into a ZIP file
