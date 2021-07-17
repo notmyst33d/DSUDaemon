@@ -66,7 +66,7 @@ class Main {
 
         private fun flashDsuPackageCommand(path: String, userdataSize: Long): String {
             println("flashDsuPackageCommand: received")
-            Runtime.getRuntime().exec("am start -n com.android.dynsystem/com.android.dynsystem.VerificationActivity -a android.os.image.action.START_INSTALL -d $path --el KEY_USERDATA_SIZE $userdataSize")
+            Runtime.getRuntime().exec("am start -n com.android.dynsystem/com.android.dynsystem.VerificationActivity -a android.os.image.action.START_INSTALL -d \"${path.replace("\\", "\\\\")}\" --el KEY_USERDATA_SIZE $userdataSize")
 
             println("flashDsuPackageCommand: finished")
             return "Installing DSU"
